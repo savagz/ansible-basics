@@ -1,0 +1,7 @@
+[servers]
+server1 ansible_host=devopsn1.myhost.org
+server2 ansible_host=devopsn2.myhost.org
+server3 ansible_host=devopsn3.myhost.org
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
