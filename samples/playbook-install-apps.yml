@@ -1,0 +1,15 @@
+---
+- hosts: servers
+  become: true
+  tasks:
+    - name: Update Apt
+      apt: update_cache=yes
+
+    - name: Install Tree
+      apt: name=tree state=latest
+
+    - name: Install Iftop
+      apt: name=iftop state=latest
+
+    - name: Install Bash Completion
+      apt: name=bash-completion state=latest

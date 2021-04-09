@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Update Apt
+      apt: update_cache=yes
+
+    - name: Install Apache
+      apt: name=apache2 state=latest
+
+  handlers:
+    - name: Restart Apache
+      service: name=apache2 state=restarted
