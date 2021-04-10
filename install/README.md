@@ -1,7 +1,7 @@
 ANSIBLE.
 ===========
 
-## Server
+## Server and Hosts
 
 ```sh
 Ubuntu 20
