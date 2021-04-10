@@ -1,0 +1,21 @@
+---
+- hosts: servers
+  become: true
+
+  tasks:
+    - name: Create Folder
+      file:
+        dest: /opt/ansible/test/
+        mode: 0755
+        recurse: yes
+        state: directory
+
+    - name: Copy file to remote server
+      copy:
+        src: /home/develop/Ansible/Files/data.json
+        dest: /opt/ansible/test/
+
+    - name: Copy folder to remote server
+      copy:
+        src: /home/develop/Ansible/Files/Data
+        dest: /opt/ansible/test/

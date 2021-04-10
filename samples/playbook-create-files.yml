@@ -1,0 +1,23 @@
+---
+- hosts: servers
+  become: true
+
+  tasks:
+    - name: Create Multiple Folder
+      file:
+        dest: /opt/ansible/demo/
+        mode: 0755
+        recurse: yes
+        state: directory
+
+    - name: Create Empty File 
+      file:
+        path: /opt/ansible/demo/config.conf
+        mode: 0700
+        state: touch
+
+    - name: Create Symlink
+      file:
+        src: /opt/ansible/demo/config.conf
+        dest: /opt/ansible/config.conf
+        state: link
